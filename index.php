@@ -1,10 +1,11 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuit de l'info</title>
-</head>
-<body>
-    <p> YANNIIIISS efrgr</p>
-</body>
-</html>
+<?php
+require 'connect.php';
+$db = new PDO(DNS, LOGIN, PASSWORD, $options);
+
+$sql = 'SELECT * FROM ni_afficher';
+$statement = $db->query($sql);
+$results = $statement->fetchAll();
+foreach ($results as $row) {
+    echo 'ID: ' . $row['id'] . ' - Name: ' . $row['name'] . '<br>';
+}
+?>
