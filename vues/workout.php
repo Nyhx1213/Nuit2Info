@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require_once "connect.php";
+require_once "../connect.php";
 $db = new PDO(DNS, LOGIN, PASSWORD, $options);
 include "permission.inc.php";
 ?>
